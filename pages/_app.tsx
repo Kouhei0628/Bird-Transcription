@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           name='twitter:image'
-          content='https://bird-transcription.vercel.app/mainvisual.png'
+          content='https://bird-transcription.vercel.app/mainvisual.jpg'
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta
