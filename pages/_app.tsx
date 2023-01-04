@@ -13,6 +13,10 @@ export default function App({ Component, pageProps }: AppProps) {
           content={`https://bird-transcription.vercel.app/mainvisual.jpg`}
         />
         <meta
+          property='og:url'
+          content='https://bird-transcription.vercel.app'
+        />
+        <meta
           name='twitter:image'
           content='https://bird-transcription.vercel.app/mainvisual.jpg'
         />
