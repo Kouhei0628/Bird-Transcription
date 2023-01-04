@@ -3,15 +3,15 @@ import Head from "next/head";
 import { client } from "../../libs/client";
 import styles from "../../styles/Species.module.scss";
 
-type Species = { sname: string; pname: string };
+type Birds = { sname: string; pname: string };
 
-export default function Species({ species }: { species: Species[] }) {
+export default function Birds({ birds }: { birds: Birds[] }) {
   return (
     <>
       <Head>
-        <title>Species</title>
+        <title>Birds list</title>
       </Head>
-      <h1>Species</h1>
+      <h1>Birds list</h1>
       <p className={styles.desc}>
         The following are the birds featured in this work.
       </p>
@@ -21,7 +21,7 @@ export default function Species({ species }: { species: Species[] }) {
             <th>Scientific Name</th>
             <th>Popular Name</th>
           </tr>
-          {species.map((sp, i) => (
+          {birds.map((sp, i) => (
             <tr key={i}>
               <td className={styles.sname}>{sp.sname}</td>
               <td>{sp.pname}</td>
@@ -35,5 +35,5 @@ export default function Species({ species }: { species: Species[] }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({ endpoint: "species?limit=70" });
-  return { props: { species: data.contents } };
+  return { props: { birds: data.contents } };
 };

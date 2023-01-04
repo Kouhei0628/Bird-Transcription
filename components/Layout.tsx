@@ -5,7 +5,7 @@ import styles from "../styles/Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const pages = ["", "Concept", "Species", "Decode"];
+  const pages = ["", "Concept", "Birds", "Decode"];
   return (
     <>
       <nav className={styles.headernav}>
