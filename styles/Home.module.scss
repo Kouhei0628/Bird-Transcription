@@ -1,0 +1,47 @@
+.titlewrapper {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    @media (min-width: 630px) {
+        font-size: 3em;
+    }
+}
+
+.processlist {
+    width: 89%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+}
+
+.processitem {
+    width: calc(100vw / 3);
+    height: 100%;
+    position: relative;
+    text-align: center;
+    @media (min-width: 630px) {
+        width: calc(100vw / 4.3);
+    }
+}
+
+.imgWrap {
+    min-width: 18vw;
+    min-height: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.processName {
+    font-size: 0.8em;
+    @media (min-width: 630px) {
+        font-size: 1em;
+    }
+}

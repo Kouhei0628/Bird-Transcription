@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.32 111.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #231815;
+      }
+    </style>
+  </defs>
+  <g id="symbols">
+    <g>
+      <rect class="cls-1" width="111.32" height="111.32"/>
+      <g>
+        <polygon class="cls-2" points="37.85 41.06 40.36 34.52 42.87 41.06 45.97 41.06 40.36 26.43 34.75 41.06 37.85 41.06"/>
+        <rect class="cls-2" x="25.04" y="52.94" width="57.16" height="1.44" transform="translate(-14.88 86.28) rotate(-70.49)"/>
+        <circle class="cls-2" cx="23.77" cy="55.45" r="1.78"/>
+        <circle class="cls-2" cx="29.1" cy="55.45" r="1.78"/>
+        <circle class="cls-2" cx="34.42" cy="55.45" r="1.78"/>
+        <path class="cls-2" d="M15.91,67.64v-24.35h3.84v.52h-3.24v23.31h3.24v.52h-3.84Z"/>
+        <path class="cls-2" d="M38.53,67.12h3.24v-23.31h-3.24v-.52h3.84v24.35h-3.84v-.52Z"/>
+        <polygon class="cls-2" points="92.32 70.27 89.81 76.81 87.3 70.27 84.2 70.27 89.81 84.9 95.42 70.27 92.32 70.27"/>
+        <circle class="cls-2" cx="73.22" cy="55.45" r="1.78"/>
+        <circle class="cls-2" cx="78.54" cy="55.45" r="1.78"/>
+        <circle class="cls-2" cx="83.87" cy="55.45" r="1.78"/>
+        <path class="cls-2" d="M65.36,67.64v-24.35h3.84v.52h-3.24v23.31h3.24v.52h-3.84Z"/>
+        <path class="cls-2" d="M87.98,67.12h3.24v-23.31h-3.24v-.52h3.84v24.35h-3.84v-.52Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

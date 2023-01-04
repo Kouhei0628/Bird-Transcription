@@ -1,0 +1,32 @@
+.note {
+    width: 82%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 0 1em;
+    border: 1px dotted black;
+    margin-bottom: 40px;
+}
+
+.strong {
+    color: red;
+}
+
+.table {
+    margin: 0 auto;
+    width: 82%;
+    border: 1px solid black;
+    th {
+        padding: 13px;
+        border-bottom: 1px dotted black;
+    }
+}
+
+.imgWrap {
+    width: 34%;
+    padding: 0 17px;
+    text-align: center;
+}
+
+.img {
+    max-height: 70px;
+}

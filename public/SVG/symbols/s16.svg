@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.32 111.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #231815;
+      }
+    </style>
+  </defs>
+  <g id="symbols">
+    <g>
+      <rect class="cls-1" width="111.32" height="111.32"/>
+      <g>
+        <path class="cls-2" d="M10.94,78.92V29.79l26.17,24.56-26.17,24.56Zm4.33-39.13v29.14l15.52-14.57-15.52-14.57Z"/>
+        <rect class="cls-2" x="13.35" y="54.94" width="57.16" height="1.44" transform="translate(-24.54 76.59) rotate(-70.49)"/>
+        <circle class="cls-2" cx="81.78" cy="54.25" r="1.78"/>
+        <circle class="cls-2" cx="87.11" cy="54.25" r="1.78"/>
+        <circle class="cls-2" cx="92.43" cy="54.25" r="1.78"/>
+        <path class="cls-2" d="M73.92,66.44v-24.35h3.84v.52h-3.24v23.31h3.24v.52h-3.84Z"/>
+        <path class="cls-2" d="M96.55,65.92h3.24v-23.31h-3.24v-.52h3.84v24.35h-3.84v-.52Z"/>
+        <path class="cls-2" d="M53.41,68.19v-27.69l14.69,13.92-14.69,13.78Zm2.89-20.98v14.31l7.59-7.12-7.59-7.19Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
