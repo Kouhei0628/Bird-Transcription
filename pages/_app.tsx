@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }: AppProps) {
           property='og:image'
           content={`https://bird-transcription.vercel.app/mainvisual.jpg`}
         />
+        <meta
+          name='twitter:image'
+          content='https://bird-transcription.vercel.app/mainvisual.png'
+        />
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           property='og:description'
