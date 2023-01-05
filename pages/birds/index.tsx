@@ -17,14 +17,14 @@ export default function Birds({ birds }: { birds: Birds[] }) {
       </p>
       <table className={styles.table}>
         <tbody>
-          <tr>
+          <tr className={styles.headrow}>
             <th>Scientific Name</th>
             <th>Popular Name</th>
           </tr>
           {birds.map((sp, i) => (
-            <tr key={i}>
+            <tr className={styles.namerow} key={i}>
               <td className={styles.sname}>{sp.sname}</td>
-              <td>{sp.pname}</td>
+              <td className={styles.pname}>{sp.pname}</td>
             </tr>
           ))}
         </tbody>

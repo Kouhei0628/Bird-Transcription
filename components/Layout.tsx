@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "../styles/Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const [loaded, setLoad] = useState<"start" | "complete" | "init">("init");
   const router = useRouter();
   const pages = ["", "Concept", "Birds", "Decode"];
+  useEffect(() => {
+    router.events.on("routeChangeStart", () => setLoad("start"));
+    router.events.on("routeChangeComplete", () => setLoad("complete"));
+    return () => {
+      router.events.off("routeChangeStart", () => setLoad("start"));
+      router.events.off("routeChangeComplete", () => setLoad("complete"));
+    };
+  });
   return (
     <>
       <nav className={styles.headernav}>
@@ -24,7 +33,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         ))}
       </nav>
-      <main className={styles.main}>{children}</main>
+      <main
+        className={`${styles.main} ${loaded === "start" && styles.start} ${
+          loaded === "complete" && styles.complete
+        }`}>
+        {children}
+      </main>
     </>
   );
 }

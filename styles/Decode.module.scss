@@ -1,10 +1,15 @@
 .note {
-    width: 82%;
+    width: 89%;
+    max-width: 678px;
     margin: 0 auto;
     text-align: justify;
+    font-size: 18px;
     padding: 0 1em;
     border: 1px dotted black;
     margin-bottom: 40px;
+    @media screen and (min-width: 630px) {
+        width: 72%;
+    }
 }
 
 .strong {
@@ -13,11 +18,15 @@
 
 .table {
     margin: 0 auto;
-    width: 82%;
-    border: 1px solid black;
+    width: 89%;
+    max-width: 678px;
     th {
         padding: 13px;
         border-bottom: 1px dotted black;
+    }
+    @media screen and (min-width: 630px) {
+        width: 72%;
+        border: 1px solid black;
     }
 }
 
