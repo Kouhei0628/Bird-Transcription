@@ -51,6 +51,7 @@
 .headernav {
     position: -webkit-sticky;
     position: sticky;
+    z-index: 3;
     top: 0;
     display: flex;
     justify-content: space-between;

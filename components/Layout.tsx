@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useState } from "react";
 import styles from "../styles/Layout.module.scss";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const [loaded, setLoad] = useState<"start" | "complete" | "init">("init");
+  const [load, setLoad] = useState<"start" | "complete" | "init">("init");
   const router = useRouter();
   const pages = ["", "Concept", "Birds", "Decode"];
   useEffect(() => {
@@ -34,8 +34,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         ))}
       </nav>
       <main
-        className={`${styles.main} ${loaded === "start" && styles.start} ${
-          loaded === "complete" && styles.complete
+        className={`${styles.main} ${load === "start" && styles.start} ${
+          load === "complete" && styles.complete
         }`}>
         {children}
       </main>
