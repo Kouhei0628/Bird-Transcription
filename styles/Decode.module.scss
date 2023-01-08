@@ -12,6 +12,10 @@
     }
 }
 
+.notetxt {
+    font-size: 17px;
+}
+
 .strong {
     color: red;
 }
@@ -36,7 +40,7 @@
 }
 
 .clickspace {
-    background-color: rgb(82, 223, 255);
+    border: 1px dashed #000;
     border-radius: 0.3em;
     padding: 2px 8px;
 }

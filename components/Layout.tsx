@@ -45,18 +45,18 @@ export default function Layout({ children }: { children: ReactNode }) {
             </Link>
           </div>
         ))}
-      </nav>
+      </nav>{" "}
+      <div className={styles.toggleLang}>
+        <p>{isJpn ? "日本語" : "English"}</p>
+        <label className={styles.switch}>
+          <input type='checkbox' onClick={() => handleClick()} />
+          <span className={styles.slider}></span>
+        </label>
+      </div>
       <main
         className={`${styles.main} ${load === "start" && styles.start} ${
           load === "complete" && styles.complete
         }`}>
-        <div className={styles.toggleLang}>
-          <p>{isJpn ? "日本語" : "English"}</p>
-          <label className={styles.switch}>
-            <input type='checkbox' onClick={() => handleClick()} />
-            <span className={styles.slider}></span>
-          </label>
-        </div>
         {children}
       </main>
     </LangCxt.Provider>

@@ -21,7 +21,7 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
       <h1>{isJpn ? "解読書" : "Decoding Guidelines"}</h1>
       <div className={styles.note}>
         {isJpn ? (
-          <p>
+          <p className={styles.notetxt}>
             <strong className={styles.strong}>注</strong>: 以下に示す共通の記号(
             <Bracket />
             )はどの鳴き声も当てはめることができることを表しています。これらの記号はよく組み合わせて使用されます。そしてこれらはあくまで解釈であり正解となるものはありません。また地域差、個体差、年齢差など様々な条件により、提示した解釈と異なる場合があります。
@@ -32,7 +32,7 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
             をご覧ください。
           </p>
         ) : (
-          <p>
+          <p className={styles.notetxt}>
             <strong className={styles.strong}>NOTE</strong>: There is a common
             symbol below (<Bracket />
             ), suggesting that all bird calls fall under it. These symbols are
@@ -43,7 +43,7 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
             scientific name. If you want to know the commonly known name of each
             bird, click{" "}
             <Link className={styles.clickspace} href={`/birds`}>
-              <strong>here</strong>
+              <strong>HERE</strong>
             </Link>
             .
           </p>
@@ -52,8 +52,8 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
       <table className={styles.table}>
         <tbody>
           <tr>
-            <th>Symbol</th>
-            <th>Meaning</th>
+            <th>{isJpn ? "記号" : "Symbol"}</th>
+            <th>{isJpn ? "意味" : "Meaning"}</th>
           </tr>
           {symbols.map((sym, i) => (
             <tr key={i}>
