@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import styles from "../styles/Layout.module.scss";
+
+export const LangCxt = createContext(false);
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [load, setLoad] = useState<"start" | "complete" | "init">("init");
+  const [isJpn, setIsJpn] = useState<boolean>(false);
+
   const router = useRouter();
   const pages = ["", "Concept", "Birds", "Decode"];
+
+  const handleClick = () => {
+    setIsJpn(p => !p);
+  };
+
   useEffect(() => {
     router.events.on("routeChangeStart", () => setLoad("start"));
     router.events.on("routeChangeComplete", () => setLoad("complete"));
@@ -16,7 +25,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     };
   });
   return (
-    <>
+    <LangCxt.Provider value={isJpn}>
       <nav className={styles.headernav}>
         {pages.map(p => (
           <div
@@ -24,7 +33,11 @@ export default function Layout({ children }: { children: ReactNode }) {
             className={`${styles.headernavlist} ${
               router.pathname === `/${p.toLowerCase()}` ? styles.listActive : ""
             }`}>
-            <Link href={`/${p.toLowerCase()}`} className={styles.anchor}>
+            <Link
+              href={{
+                pathname: `/${p.toLowerCase()}`,
+              }}
+              className={styles.anchor}>
               <p>
                 {p === "" && `Home`}
                 {p}
@@ -37,8 +50,15 @@ export default function Layout({ children }: { children: ReactNode }) {
         className={`${styles.main} ${load === "start" && styles.start} ${
           load === "complete" && styles.complete
         }`}>
+        <div className={styles.toggleLang}>
+          <p>{isJpn ? "日本語" : "English"}</p>
+          <label className={styles.switch}>
+            <input type='checkbox' onClick={() => handleClick()} />
+            <span className={styles.slider}></span>
+          </label>
+        </div>
         {children}
       </main>
-    </>
+    </LangCxt.Provider>
   );
 }

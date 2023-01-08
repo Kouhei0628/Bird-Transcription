@@ -1,9 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useContext } from "react";
+import { LangCxt } from "../components/Layout";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const process = ["Call", "Listen & Analyze", "Symbolize"];
+  const isJpn = useContext(LangCxt);
+  const process = [
+    { eng: "Call", jpn: "鳴く" },
+    { eng: "Listen & Analyze", jpn: "聴く・分析" },
+    { eng: "Symbolize", jpn: "記号化" },
+  ];
   const processSizes = [
     { x: 108, y: 97 },
     { x: 63, y: 104 },
@@ -36,7 +43,7 @@ export default function Home() {
                 />
               </div>
               <p className={styles.processName}>
-                {i + 1}. {p}
+                {i + 1}. {isJpn ? p.jpn : p.eng}
               </p>
             </li>
           ))}
