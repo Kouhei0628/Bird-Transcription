@@ -18,7 +18,7 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
       <div className={styles.note}>
         <p>
           <strong className={styles.strong}>NOTE</strong>: There is a common
-          symbol above (<Bracket />
+          symbol below (<Bracket />
           ), suggesting that all bird calls fall under it. These symbols are
           sometimes used in combination. These are only interpretations, not
           evidence, and may differ from the interpretations presented due to
