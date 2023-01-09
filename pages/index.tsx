@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useContext } from "react";
-import { LangCxt } from "../components/Layout";
+import Translation from "../components/Translation";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const isJpn = useContext(LangCxt);
   const process = [
     { eng: "Call", jpn: "鳴く" },
     { eng: "Listen & Analyze", jpn: "聴く・分析" },
@@ -43,7 +41,7 @@ export default function Home() {
                 />
               </div>
               <p className={styles.processName}>
-                {i + 1}. {isJpn ? p.jpn : p.eng}
+                {i + 1}. {Translation(p.jpn, p.eng)}
               </p>
             </li>
           ))}

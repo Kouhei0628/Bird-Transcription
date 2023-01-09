@@ -1,20 +1,26 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "../styles/Layout.module.scss";
-
-export const LangCxt = createContext(false);
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [load, setLoad] = useState<"start" | "complete" | "init">("init");
-  const [isJpn, setIsJpn] = useState<boolean>(false);
+  const [isJa, setIsJa] = useState(false);
+  const [language, setLanguage] = useState<"init" | "en" | "ja">("init");
 
   const router = useRouter();
+  const { lang } = router.query;
+
   const pages = ["", "Concept", "Birds", "Decode"];
 
   const handleClick = () => {
-    setIsJpn(p => !p);
+    setIsJa(p => !p);
+    if (lang) router.push({ query: { lang: !isJa ? "ja" : "en" } });
   };
+
+  useEffect(() => {
+    if (!lang) router.push({ query: { lang: isJa ? "ja" : "en" } });
+  });
 
   useEffect(() => {
     router.events.on("routeChangeStart", () => setLoad("start"));
@@ -25,7 +31,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     };
   });
   return (
-    <LangCxt.Provider value={isJpn}>
+    <>
       <nav className={styles.headernav}>
         {pages.map(p => (
           <div
@@ -36,6 +42,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Link
               href={{
                 pathname: `/${p.toLowerCase()}`,
+                query: { lang: isJa ? "ja" : "en" },
               }}
               className={styles.anchor}>
               <p>
@@ -47,7 +54,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         ))}
       </nav>{" "}
       <div className={styles.toggleLang}>
-        <p>{isJpn ? "日本語" : "English"}</p>
+        <p>{lang === "en" ? "English" : "日本語"}</p>
         <label className={styles.switch}>
           <input type='checkbox' onClick={() => handleClick()} />
           <span className={styles.slider}></span>
@@ -59,6 +66,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         }`}>
         {children}
       </main>
-    </LangCxt.Provider>
+    </>
   );
 }
