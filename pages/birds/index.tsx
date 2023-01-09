@@ -10,12 +10,12 @@ export default function Birds({ birds }: { birds: Birds[] }) {
   return (
     <>
       <Head>
-        <title>{Translation("鳥の名簿", "Birds List")}</title>
+        <title>{Translation("名称一覧", "Birds List")}</title>
       </Head>
-      <h1>{Translation("鳥の名簿", "Birds List")}</h1>
+      <h1>{Translation("名称一覧", "Birds List")}</h1>
       <p className={styles.desc}>
         {Translation(
-          "ここでは本作品で取り上げた鳥の種類をリスティングしています。",
+          "ここでは本作品で取り上げた鳥の種類を一覧としてリスティングしています。",
           "The following are the birds featured in this work."
         )}
       </p>

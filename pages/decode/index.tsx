@@ -13,9 +13,9 @@ export default function Decode({ symbols }: { symbols: SymbolPrps[] }) {
   return (
     <>
       <Head>
-        <title>{Translation("解読書", "Decoding Guidelines")}</title>
+        <title>{Translation("解読のてびき", "Decoding Guidelines")}</title>
       </Head>
-      <h1>{Translation("解読書", "Decoding Guidelines")}</h1>
+      <h1>{Translation("解読のてびき", "Decoding Guidelines")}</h1>
       <div className={styles.note}>{Translation(<Ja />, <En />)}</div>
       <table className={styles.table}>
         <tbody>

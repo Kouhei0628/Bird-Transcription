@@ -5,8 +5,8 @@ import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   const process = [
-    { eng: "Call", jpn: "鳴く" },
-    { eng: "Listen & Analyze", jpn: "聴く・分析" },
+    { eng: "Call", jpn: "鳴き声を" },
+    { eng: "Listen & Analyze", jpn: "聴いて分析" },
     { eng: "Symbolize", jpn: "記号化" },
   ];
   const processSizes = [
