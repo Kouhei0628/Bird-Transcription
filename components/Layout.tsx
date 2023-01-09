@@ -23,6 +23,13 @@ export default function Layout({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
+    if (lang === "ja") {
+      setIsJa(true);
+      router.push({ query: { lang: "ja" } });
+    }
+  }, [lang]);
+
+  useEffect(() => {
     router.events.on("routeChangeStart", () => setLoad("start"));
     router.events.on("routeChangeComplete", () => setLoad("complete"));
     return () => {
