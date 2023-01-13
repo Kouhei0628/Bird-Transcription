@@ -60,9 +60,13 @@ export default function Layout({ children }: { children: ReactNode }) {
         ))}
       </nav>{" "}
       <div className={styles.toggleLang}>
-        {/* <p>{lang === "en" ? "English" : "日本語"}</p> */}
         <label className={styles.switch}>
-          <input type='checkbox' checked={isJa} onClick={() => handleClick()} />
+          <input
+            type='checkbox'
+            defaultChecked={isJa}
+            onClick={() => handleClick()}
+            tabIndex={0}
+          />
           <span className={styles.slider}></span>
         </label>
       </div>
