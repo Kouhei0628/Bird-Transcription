@@ -6,7 +6,6 @@ import styles from "../styles/Layout.module.scss";
 export default function Layout({ children }: { children: ReactNode }) {
   const [load, setLoad] = useState<"start" | "complete" | "init">("init");
   const [isJa, setIsJa] = useState(false);
-  const [language, setLanguage] = useState<"init" | "en" | "ja">("init");
 
   const router = useRouter();
   const { lang } = router.query;
@@ -61,9 +60,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         ))}
       </nav>{" "}
       <div className={styles.toggleLang}>
-        <p>{lang === "en" ? "English" : "日本語"}</p>
+        {/* <p>{lang === "en" ? "English" : "日本語"}</p> */}
         <label className={styles.switch}>
-          <input type='checkbox' onClick={() => handleClick()} />
+          <input type='checkbox' checked={isJa} onClick={() => handleClick()} />
           <span className={styles.slider}></span>
         </label>
       </div>

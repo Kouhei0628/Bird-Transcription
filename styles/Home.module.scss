@@ -26,8 +26,33 @@
     height: 100%;
     position: relative;
     text-align: center;
+    opacity: 0;
     @media (min-width: 630px) {
         width: calc(100vw / 4.3);
+    }
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            -webkit-animation: homeFadein 0.9s forwards $i * 0.9s ease-out;
+                    animation: homeFadein 0.9s forwards $i * 0.9s ease-out;
+        }
+    }
+}
+
+@-webkit-keyframes homeFadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes homeFadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
