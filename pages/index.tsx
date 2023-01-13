@@ -1,19 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import GoogleMap from "../components/GoogleMap";
 import Translation from "../components/Translation";
+import { exhib, process, processSizes } from "../data/data";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  const process = [
-    { eng: "Call", jpn: "鳴き声を" },
-    { eng: "Listen & Analyze", jpn: "聴いて分析" },
-    { eng: "Symbolize", jpn: "記号化" },
-  ];
-  const processSizes = [
-    { x: 108, y: 97 },
-    { x: 63, y: 104 },
-    { x: 118, y: 31 },
-  ];
   return (
     <>
       <Head>
@@ -26,7 +19,9 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className={styles.titlewrapper}>
+        <p>University Graduation Work</p>
         <h1 className={styles.title}>Bird-Transcription</h1>
+
         <ul className={styles.processlist}>
           {process.map((p, i) => (
             <li className={styles.processitem} key={i}>
@@ -46,6 +41,33 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        <div className={styles.exhibWrap}>
+          <ul>
+            {exhib.map((e, i) => (
+              <li className={styles.exhiList} key={i}>
+                <h2 className={styles.titleMd}>
+                  {Translation(e.title.jpn, e.title.eng)}
+                </h2>
+                <p>{Translation(e.content.jpn, e.content.eng)}</p>
+                {e.title.eng === "Access" && <GoogleMap />}
+              </li>
+            ))}
+          </ul>
+          <div className={styles.website}>
+            <h2 className={styles.titleMd}>{Translation("リンク", "Links")}</h2>
+            <div className={styles.hp}>
+              <Link
+                className={styles.link}
+                href={`https://www.zokei.ac.jp/`}
+                target={`_blank`}>
+                {Translation(
+                  "大学公式ホームページ ↗︎",
+                  "Official university website ↗︎"
+                )}
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

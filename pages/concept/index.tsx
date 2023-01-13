@@ -10,7 +10,9 @@ export default function Concept() {
         <title>{Translation("作品について", "Concept")}</title>
       </Head>
       <h1>{Translation("作品について", "Concept")}</h1>
-
+      <h2>
+        {Translation("「十鳥十色。」", '"Diversity can be transcribed."')}
+      </h2>
       <div className={styles.description}>
         <h2>{Translation("今作で行いたかったこと", "What's this project?")}</h2>
         {Translation(<Ja />, <En />)}

@@ -7,6 +7,8 @@
 }
 
 .title {
+    margin-top: 0;
+    padding-top: 0;
     @media (min-width: 630px) {
         font-size: 3em;
     }
@@ -19,6 +21,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 3em;
+    margin: 0 0 90px;
 }
 
 .processitem {
@@ -33,7 +36,7 @@
     @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
             -webkit-animation: homeFadein 0.9s forwards $i * 0.9s ease-out;
-                    animation: homeFadein 0.9s forwards $i * 0.9s ease-out;
+            animation: homeFadein 0.9s forwards $i * 0.9s ease-out;
         }
     }
 }
@@ -68,5 +71,31 @@
     font-size: 0.8em;
     @media (min-width: 630px) {
         font-size: 1em;
+    }
+}
+
+.exhibWrap {
+    width: 87%;
+}
+
+.titleMd {
+    padding-left: 0;
+    padding-bottom: 0;
+    text-align: left;
+}
+
+.exhiList {
+    margin-bottom: 50px;
+}
+
+.link {
+    display: inline-block;
+    padding: 1em;
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease;
+    &:hover {
+        background-color: #c2c2c2;
+        color: #000;
     }
 }
