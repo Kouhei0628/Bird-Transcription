@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 import styles from "../styles/Layout.module.scss";
+import Footer from "./Footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [load, setLoad] = useState<"start" | "complete" | "init">("init");
@@ -10,7 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   const router = useRouter();
   const { lang } = router.query;
 
-  const pages = ["", "Concept", "Birds", "Decode"];
+  const pages = ["", "Concept", "Birds", "Decode", "Archives"];
 
   const handleClick = () => {
     setIsJa(p => !p);
@@ -76,6 +77,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         }`}>
         {children}
       </main>
+      <Footer />
     </>
   );
 }

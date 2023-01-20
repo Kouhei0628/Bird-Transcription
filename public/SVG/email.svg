@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 214.92 145.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g>
+      <path class="cls-1" d="M5,20.65V124.35c0,8.93,7.24,16.17,16.17,16.17H193.76c8.93,0,16.17-7.24,16.17-16.17V20.65"/>
+      <polygon class="cls-1" points="107.46 73.47 205.4 5 7.33 5 107.46 73.47"/>
+    </g>
+  </g>
+</svg>

@@ -58,3 +58,8 @@ h2 {
     padding: 0.6em 0.5em;
     text-align: center;
 }
+
+img {
+    -o-object-fit: contain;
+       object-fit: contain;
+}
