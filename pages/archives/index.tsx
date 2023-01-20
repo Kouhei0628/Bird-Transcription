@@ -6,7 +6,7 @@ import Translation from "../../components/Translation";
 import styles from "../../styles/Archives.module.scss";
 
 export default function Page() {
-  const { pathname } = useRouter();
+  const { lang } = useRouter().query;
   const ensembles = [
     '"Noon in a Rain Forest"',
     '"A Banquet by the Water"',
@@ -51,7 +51,9 @@ export default function Page() {
                 .fill(undefined)
                 .map((e, i) => (
                   <li className={styles.libListItem} key={i}>
-                    <Link className={styles.libLink} href={`archives/allbirds`}>
+                    <Link
+                      className={styles.libLink}
+                      href={`/archives/allbirds`}>
                       <Image
                         src={`/library/lib${i + 1}.jpg`}
                         alt={`bird${i + 1}`}
@@ -63,7 +65,9 @@ export default function Page() {
                 ))}
             </ul>
           </div>
-          <Link className={styles.allbirdLink} href={`archives/allbirds`}>
+          <Link
+            className={styles.allbirdLink}
+            href={{ pathname: `/archives/allbirds`, query: { lang } }}>
             {Translation("すべての鳥を見る→", "SEE ALL BIRDS→")}
           </Link>
         </div>

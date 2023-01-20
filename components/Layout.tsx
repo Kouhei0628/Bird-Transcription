@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </Link>
           </div>
         ))}
-      </nav>{" "}
+      </nav>
       <div className={styles.toggleLang}>
         <label className={styles.switch}>
           <input

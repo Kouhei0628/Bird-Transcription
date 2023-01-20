@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Translation from "../../../components/Translation";
 import styles from "../../../styles/Allbirds.module.scss";
 
 export default function Page() {
+  const { lang } = useRouter().query;
   return (
     <>
       <Head>
@@ -12,7 +14,9 @@ export default function Page() {
       </Head>
       <h1>{Translation("アーカイブ詳細", "Archives of all birds")}</h1>
       <div className={styles.wrap}>
-        <Link className={styles.allbirdLink} href={`/archives`}>
+        <Link
+          className={styles.allbirdLink}
+          href={{ pathname: `/archives`, query: { lang } }}>
           {Translation("←アーカイブに戻る", "←Back to Archives")}
         </Link>
         <ul className={styles.libList}>
@@ -34,7 +38,9 @@ export default function Page() {
               </li>
             ))}
         </ul>
-        <Link className={styles.allbirdLink} href={`/archives`}>
+        <Link
+          className={styles.allbirdLink}
+          href={{ pathname: `/archives`, query: { lang } }}>
           {Translation("←アーカイブに戻る", "←Back to Archives")}
         </Link>
       </div>
