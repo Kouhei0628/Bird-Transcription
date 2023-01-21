@@ -58,11 +58,11 @@ export default function Home() {
             <div className={styles.hp}>
               <Link
                 className={styles.link}
-                href={`https://www.zokei.ac.jp/`}
+                href={`https://sotsuten.zokei.ac.jp/2022/`}
                 target={`_blank`}>
                 {Translation(
-                  "大学公式ホームページ ↗︎",
-                  "Official university website ↗︎"
+                  "ZOKEI展特設ページ ↗︎",
+                  "ZOKEI EXHIBITION SITE ↗︎"
                 )}
               </Link>
             </div>

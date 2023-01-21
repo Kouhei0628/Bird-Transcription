@@ -18,12 +18,6 @@ export default function Page() {
         <title>{Translation("アーカイブ", "Archives")}</title>
       </Head>
       <h1>{Translation("アーカイブ", "Archives")}</h1>
-      <p className={styles.intro}>
-        {Translation(
-          "実際に現地にて展示されている作品をご紹介します。",
-          "The actual works on display."
-        )}
-      </p>
       <div className={styles.wrap}>
         <div className={styles.section}>
           <h2>Overall view</h2>
